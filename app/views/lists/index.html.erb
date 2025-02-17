@@ -1,11 +1,26 @@
-<h1>List#index</h1>
-<ul>
+<%= render "navbar" %>
+<%= render "banner", image: "home-banner.jpg", title: "Welcome !", text: "Manage your movies !" %>
+
+<div class="container">
+  <h1 class="mb-4">My Lists</h1>
+
+  <div class="row mb-3">
   <% @lists.each do |list| %>
-    <li>
-      <%= link_to list.name, list_path(list)  %>
-    </li>
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <% if list.image_url.present? %>
+          <%= link_to list_path(list) do %>
+            <div class="image-container">
+              <%= image_tag list.image_url, class: "card-img-top img-fluid", alt: list.name %>
+              <div class="card-body-overlay">
+                <%= list.name %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
+</div>
 
-<%= link_to "New list", new_list_path  %>
-
-</ul>
+</div>

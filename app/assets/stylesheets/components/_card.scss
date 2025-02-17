@@ -1,0 +1,32 @@
+.card img {
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+
+  filter: grayscale(100%); // Applique un effet noir et blanc
+  transition: filter 0.3s ease-in-out;
+}
+
+.card img:hover {
+  filter: grayscale(0%); // Recolorisation au survol
+}
+
+.image-container {
+  position: relative;
+}
+
+.card-img-top {
+  width: 100%;
+  height: fit-content;
+}
+
+.card-body-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* Couleur du texte */
+  font-size: 1.5rem; /* Taille du texte */
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre pour améliorer la visibilité */
+}

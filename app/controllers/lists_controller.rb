@@ -6,6 +6,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @bookmark = Bookmark.new
   end
 
   def new
@@ -27,7 +28,7 @@ class ListsController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   def update
@@ -41,6 +42,6 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :image_url)
   end
 end

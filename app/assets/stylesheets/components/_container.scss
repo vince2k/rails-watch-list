@@ -1,19 +1,4 @@
-.navbar {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-
-  .brand {
-    font-size: 1.5rem;
-  }
-
-  .btn {
-    width: 100px;
-  }
-
+.container {
   .btn-primary {
     background-color: #ff4757;
     border-color: #ff4757;
@@ -31,5 +16,7 @@
 
   .btn-outline-primary:hover {
     background-color: rgb(83, 83, 83);
+    border-color: #e84142;
   }
+
 }
