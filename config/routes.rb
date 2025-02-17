@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'bookmarks/index'
-  resources :lists do
+  root to: "lists#index"
+  resources :lists, except: :index do
     resources :bookmarks, only: %w[new create]
   end
   resources :bookmarks, only: :destroy
