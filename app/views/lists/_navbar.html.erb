@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <!-- Logo -->
     <%= image_tag "logo.webp", class: "img-fluid me-3 h-100", alt: "Logo du site", style: "max-width: 50px; height: auto;" %>
-    <a class="navbar-brand fw-bold" href="<%= lists_path %>">MyMoviesLists</a>
+    <a class="navbar-brand fw-bold" href="<%= root_path %>">MyMoviesLists</a>
 
     <!-- Bouton pour collapse -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <%= link_to "My Lists", lists_path, class: "btn btn-outline-primary ms-2 my-1" %>
+          <%= link_to "My Lists", root_path, class: "btn btn-outline-primary ms-2 my-1" %>
         </li>
         <li class="nav-item">
           <%= link_to "New List", new_list_path, class: "btn btn-primary ms-2 my-1" %>
