@@ -1,11 +1,12 @@
 class ListsController < ApplicationController
-  before_action :set_list , only: %i[ show edit update ]
+  before_action :set_list, only: %i[show edit update destroy]
 
   def index
     @lists = List.all
   end
 
   def show
+    @movies = TmdbLewagonService.top_rated_movies
     @bookmark = Bookmark.new
   end
 
@@ -32,7 +33,16 @@ class ListsController < ApplicationController
   end
 
   def update
+    if @list.update(list_params)
+      redirect_to @list, notice: "List was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
 
+  def destroy
+    @list.destroy
+    redirect_to root_path
   end
 
   private
