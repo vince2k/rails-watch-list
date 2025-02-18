@@ -8,10 +8,10 @@
     <% @lists.each do |list| %>
       <div class="col-md-4 mb-3">
         <div class="card">
-          <% if list.image_url.present? %>
+          <% if list.picture.present? %>
             <%= link_to list_path(list) do %>
               <div class="image-container">
-                <%= image_tag list.image_url, class: "card-category-img-top img-fluid", alt: list.name %>
+                <%= cl_image_tag list.picture.key, class: "card-category-img-top img-fluid", alt: list.name %>
                 <div class="card-body-overlay">
                   <%= list.name %>
                 </div>

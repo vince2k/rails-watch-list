@@ -6,7 +6,6 @@ class ListsController < ApplicationController
   end
 
   def show
-    @movies = TmdbLewagonService.top_rated_movies
     @bookmark = Bookmark.new
   end
 
@@ -52,6 +51,6 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit(:name, :image_url)
+    params.require(:list).permit(:name, :image_url, :picture)
   end
 end
